@@ -1,0 +1,184 @@
+/* scss - transpilez din scss in css*/
+/* ******** reset *********** */
+@charset "UTF-8";
+
+/*@font-face {
+    font-family: 'Inter';
+    font-weight: 100 900;
+    font-display: swap;
+    font-style: normal;
+    font-named-instance: 'Regular';
+    src: url("./Inter-roman.var.woff2?v=3.18") format("woff2");
+}*/
+
+@font-face {
+    font-family: 'Montserrat';
+    font-weight: 100 900;
+    font-display: swap;
+    font-style: normal;
+    font-named-instance: 'Regular';
+    src: url("./Montserrat-Regular.woff2") format("woff2");
+}
+
+*, *::before, *::after {box-sizing: border-box;}
+
+html {
+    font-family: 'Montserrat', Trebuchet, sans-serif;
+    font-size: 16px;
+    line-height: 1.5em;
+}
+
+/* este pt font variabil @supports (font-variation-settings: normal) {
+    html {font-family: 'Montserrat', Trebuchet, sans-serif;}
+} */
+
+body {
+    display: block;
+    min-height: 100vh;
+    margin: 0;
+    text-rendering: optimizeSpeed;
+    @media (min-width: 500px) { display: grid; place-items: center;}
+}
+
+img, picture {
+    max-width: 100%;
+    display: block;
+}
+
+input, button, textarea, select { font: inherit; }
+
+strong { font-weight: 900; }
+
+
+/* ************  ***************** */
+
+.Container {}
+    .Header { }
+        .Logo{}
+            .LogoImage {}
+        .TriggerButton{}
+            .SearchTrigger {}
+            .MenuTrigger{}
+            .CartTrigger{}
+                .TriggerImage {}
+                    .SearchTriggerImage {}
+                    .MenuTriggerImage {}
+                    .CartTriggerImage {}
+        .SearchForm {}
+            .Fieldset {}
+                .Legend {}
+                    .Label {}
+                        .SearchLabel {}
+                            .SearchLabelText {}
+                            .Input {}
+                                .SearchInput {}
+        .MainMenu {}
+            .MainMenuList {}
+                .MainMenuItem {}
+                    .MainMenuLink {}
+                    .MainMenuSublist{}
+                        .MainMenuSubitem {}
+                            .MainMenuSublink {}
+                                                    
+    .Main{}
+    .Footer {}
+
+/* ******************  specificatii extra *************** */
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+@media print {
+
+    * {
+        background-image: none;
+        background: white;
+        color: black;
+    }
+
+    @page { margin: 2cm; }
+
+    @page :first { margin-top: 3cm; }
+
+    @page :left { margin-right: 3cm; }
+
+    @page :right { margin-left: 3cm; }
+
+    html {
+        background: white;
+        font-size: 12pt;
+        line-height: 1.5em;
+    }
+
+    a:link,
+    a:visited {
+        color: #00f;
+        background: transparent;
+        font-weight: bold;
+    }
+
+    a:not([href^="http"]):after {
+        content: " (" attr(href) ")";
+        font-size: 0.9em;
+    }
+
+    a[href^="/"]:after {
+        content: " (https://viorelmocanu.github.io/LinkInBio" attr(href) ") ";
+    }
+
+    /*a:not(:local-link):after { content: " (" attr(href) ")»"; }*/
+    a:after>img {
+        content: "";
+    }
+
+    body::after {
+        content: "Copyright © Viorel Mocanu, toate drepturile rezervate.";
+        display: block;
+        text-align: center;
+    }
+
+    .Container {
+        background: transparent;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        page-break-after: avoid;
+        page-break-inside: avoid
+    }
+
+    h1+h2 {
+        page-break-before: avoid;
+    }
+
+    table,
+    pre,
+    img,
+    svg,
+    blockquote,
+    a {
+        break-inside: avoid;
+    }
+
+    ul,
+    ol,
+    dl {
+        page-break-before: avoid;
+    }
