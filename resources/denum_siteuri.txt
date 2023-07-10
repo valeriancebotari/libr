@@ -1,6 +1,6 @@
 /* site-uri utile, de unde am preluat informatii */
 
-/* *************            *********/
+/* *************    the noun project - for icons png/svg   *********/
 /* *************            *********/
 /* *************            *********/
 /* *************            *********/
