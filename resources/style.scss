@@ -53,7 +53,11 @@ strong { font-weight: 900; }
 /* ************  ***************** */
 
 .Container {}
-    .Header { }
+    .Header {
+        position: sticky;
+        top: 0;
+        background: #fff;
+     }
         .Logo{}
             .LogoImage {}
         .TriggerButton{}
@@ -133,9 +137,9 @@ strong { font-weight: 900; }
         font-size: 0.9em;
     }
 
-    a[href^="/"]:after {
+    /*a[href^="/"]:after {
         content: " (https://viorelmocanu.github.io/LinkInBio" attr(href) ") ";
-    }
+    }*/
 
     /*a:not(:local-link):after { content: " (" attr(href) ")»"; }*/
     a:after>img {
@@ -143,7 +147,7 @@ strong { font-weight: 900; }
     }
 
     body::after {
-        content: "Copyright © Viorel Mocanu, toate drepturile rezervate.";
+        content: "Copyright © Vali Cebo, toate drepturile rezervate.";
         display: block;
         text-align: center;
     }
@@ -182,3 +186,4 @@ strong { font-weight: 900; }
     dl {
         page-break-before: avoid;
     }
+}
